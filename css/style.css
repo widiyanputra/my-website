@@ -1,0 +1,392 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 2000px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c28;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+  font-style: italic;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+.navbar-nav ul {
+  position: absolute;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: #010101;
+}
+
+.dropdown-content {
+  padding: 30px 20px;
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  z-index: 1;
+  color: black;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 2px;
+  color: black;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.jpeg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero ::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  bottom: 0;
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #010101;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  color: #010101;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: var(--primary);
+}
+
+/* About Section */
+.about {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 1.8rem;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 3rem;
+}
+
+/* Tugas Section */
+.tugas {
+  padding: 8rem 7% 1.4rem;
+}
+
+.tugas h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.tugas h2 span {
+  color: var(--primary);
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column; /* Tampilkan sebagai kolom utama */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.box {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1.8rem;
+  display: grid;
+  border-radius: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.cell {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cell ul {
+  background-color: var(--primary); /* Background color for the main list */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.cell li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.cell ul ul {
+  display: none;
+  position: absolute;
+  background-color: var(--primary); /* Background color for sublists */
+  border-radius: 5px;
+}
+
+.cell li:hover > ul {
+  display: inherit;
+}
+
+.cell a {
+  text-decoration: none;
+  color: #ecf0f1; /* Text color for links */
+  font-weight: bold;
+}
+
+.cell a:hover {
+  color: #010101; /* Change the color on hover */
+}
+
+.tugas-content {
+  column-count: 4;
+  column-gap: 5rem; /* Jarak antara kolom */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.tugas ul {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.tugas a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/*  Contact Section */
+.contact {
+  padding: 8rem 7% 1.4rem;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.contact h2 span {
+  color: var(--primary);
+}
+
+.contact p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.contact a {
+  text-align: center;
+}
+
+/*  Media Queries */
+
+/*  Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/*  Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  /*  Mobile Phone */
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+  }
+}

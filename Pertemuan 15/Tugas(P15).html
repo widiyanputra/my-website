@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website | JavaScript Interaction</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #333;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #004080;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Interaction</h1>
+      <p>Selamat datang! Gunakan interaksi JavaScript di bawah ini.</p>
+
+      <script>
+        // Menggunakan Alert
+        alert("Halo! WELCOME.");
+
+        // Menggunakan Prompt
+        var nama = prompt("Masukkan nama Anda:");
+        alert("Halo, " + nama + "!");
+
+        // Menggunakan Confirm
+        var konfirmasi = confirm("Apakah Anda ingin melanjutkan?");
+        if (konfirmasi) {
+          alert("Anda memilih melanjutkan.");
+        } else {
+          alert("Anda memilih untuk membatalkan.");
+        }
+
+        // Menggunakan Form
+        function submitForm() {
+          var inputForm = document.getElementById("inputForm");
+          var inputValue = inputForm.elements["textInput"].value;
+          alert("Anda memasukkan: " + inputValue);
+        }
+      </script>
+
+      <!-- Menggunakan Form -->
+      <form id="inputForm">
+        <label for="textInput">Masukkan sesuatu:</label>
+        <input type="text" id="textInput" name="textInput" />
+        <button type="button" onclick="submitForm()">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

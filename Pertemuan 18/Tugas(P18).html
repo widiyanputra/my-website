@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website | Menu Pilihan</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #f8f8f8;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #0066cc;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #004080;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Menu Pilihan</h1>
+
+      <p>Menu Pilihan :</p>
+      <p>[1] Menghitung Kalkulator</p>
+      <p>[2] Menghitung Luas Trapesium</p>
+      <p>[3] Menghitung Deret Bilangan</p>
+
+      <label for="pilihan">Pilihan Anda :</label>
+      <input type="number" id="pilihan" name="pilihan" />
+
+      <button type="button" onclick="pilihMenu()">Pilih</button>
+
+      <script>
+        function pilihMenu() {
+          var pilihan = document.getElementById("pilihan").value;
+
+          switch (pilihan) {
+            case "1":
+              kalkulator();
+              break;
+            case "2":
+              luasTrapesium();
+              break;
+            case "3":
+              deretBilangan();
+              break;
+            default:
+              alert("Pilihan tidak valid. Silakan masukkan 1, 2, atau 3.");
+              break;
+          }
+        }
+
+        function kalkulator() {
+          var angka1 = parseFloat(prompt("Masukkan angka pertama:"));
+          var operator = prompt("Masukkan operator (+, -, *, /):");
+          var angka2 = parseFloat(prompt("Masukkan angka kedua:"));
+
+          var hasil;
+
+          switch (operator) {
+            case "+":
+              hasil = angka1 + angka2;
+              break;
+            case "-":
+              hasil = angka1 - angka2;
+              break;
+            case "*":
+              hasil = angka1 * angka2;
+              break;
+            case "/":
+              hasil = angka1 / angka2;
+              break;
+            default:
+              alert("Operator tidak valid. Silakan masukkan +, -, *, atau /.");
+              return;
+          }
+
+          alert("Hasil perhitungan: " + hasil);
+        }
+
+        function luasTrapesium() {
+          var garisAtas = parseFloat(
+            prompt("Masukkan panjang garis atas trapesium:")
+          );
+          var garisBawah = parseFloat(
+            prompt("Masukkan panjang garis bawah trapesium:")
+          );
+          var tinggi = parseFloat(prompt("Masukkan tinggi trapesium:"));
+
+          var luas = 0.5 * (garisAtas + garisBawah) * tinggi;
+
+          alert("Luas trapesium adalah: " + luas);
+        }
+
+        function deretBilangan() {
+          var nilaiAwal = parseInt(prompt("Masukkan nilai awal deret:"));
+          var nilaiAkhir = parseInt(prompt("Masukkan nilai akhir deret:"));
+
+          var deret = [];
+          var jumlahBilangan = 0;
+          var jumlahNilai = 0;
+
+          for (var i = nilaiAwal; i <= nilaiAkhir; i++) {
+            deret.push(i);
+            jumlahBilangan++;
+            jumlahNilai += i;
+          }
+
+          alert("Deret yang tampil: " + deret.join(", "));
+          alert("Jumlah deret bilangan: " + jumlahBilangan + " bilangan");
+          alert("Jumlah nilai bilangan tersebut: " + jumlahNilai);
+        }
+      </script>
+    </div>
+  </body>
+</html>

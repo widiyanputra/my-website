@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website | Deret Bilangan</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      p {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Deret Bilangan Genap yang Habis Dibagi 3</h1>
+
+      <script>
+        var nilaiAwal = prompt("Masukkan nilai awal deret:");
+        var nilaiAkhir = prompt("Masukkan nilai akhir deret:");
+
+        var deret = [];
+        var jumlahBilangan = 0;
+        var jumlahNilai = 0;
+
+        for (var i = parseInt(nilaiAwal); i <= parseInt(nilaiAkhir); i++) {
+          if (i % 2 === 0 && i % 3 === 0) {
+            deret.push(i);
+            jumlahBilangan++;
+            jumlahNilai += i;
+          }
+        }
+
+        document.write("<p>Nilai Awal: " + nilaiAwal + "</p>");
+        document.write("<p>Nilai Akhir: " + nilaiAkhir + "</p>");
+        document.write("<p>Deret yang tampil: " + deret.join(", ") + "</p>");
+        document.write(
+          "<p>Jumlah deret bilangan: " + jumlahBilangan + " bilangan</p>"
+        );
+        document.write(
+          "<p>Jumlah nilai bilangan tersebut: " + jumlahNilai + "</p>"
+        );
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website | Kalkulator</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #f5f5f5;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+      }
+      input {
+        width: 50px;
+        height: 30px;
+        margin: 5px;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        outline: none;
+      }
+      select {
+        width: 60px;
+        height: 35px;
+        margin: 5px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        outline: none;
+      }
+      button {
+        width: 80px;
+        height: 35px;
+        margin: 5px;
+        font-size: 16px;
+        background-color: burlywood;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: burlywood;
+      }
+      input[readonly] {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+      .calculator-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      div h2 span {
+        color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function hitung() {
+        var angka1 = parseFloat(document.getElementById("angka1").value);
+        var angka2 = parseFloat(document.getElementById("angka2").value);
+        var operator = document.getElementById("operator").value;
+
+        var hasil;
+
+        switch (operator) {
+          case "+":
+            hasil = angka1 + angka2;
+            break;
+          case "-":
+            hasil = angka1 - angka2;
+            break;
+          case "*":
+            hasil = angka1 * angka2;
+            break;
+          case "/":
+            hasil = angka1 / angka2;
+            break;
+          default:
+            alert("Operator tidak valid.");
+            return;
+        }
+
+        document.getElementById("hasil").value = hasil;
+      }
+    </script>
+
+    <div class="calculator-container">
+      <h2><span>WELCOME TOO!!!</span></h2>
+      <h2><span>KALKULATOR SEDERHANA</span></h2>
+      <h5>By Widiyan Dwi Putra</h5>
+
+      <input type="text" id="angka1" placeholder="Angka 1" />
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" id="angka2" placeholder="Angka 2" />
+      <button type="button" onclick="hitung()">Hitung</button>
+      <input type="text" id="hasil" placeholder="Hasil" readonly />
+    </div>
+  </body>
+</html>
